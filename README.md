@@ -87,7 +87,36 @@ out, atoms = inspect_and_analyze(crystal_raw.repeat((2, 2, 2)), name="TiO2_super
 
 ---
 
-## 参考文献・クレジット
+## 参考文献・クレジット (References & Citations)
 
-* **NequIP / Allegro**: Equivariant Graph Neural Networks for interatomic potentials.
-* **ASE (Atomic Simulation Environment)**: Tools for atomistic simulations.
+本リポジトリの解析手法、実験バリデーション、および依存ライブラリの出典です。
+
+### 1. コア方法論・理論モデル (Core Methodology)
+本リポジトリで用いている原子間結合エネルギー分解（$D_{ij}$）および創発的結合解離エネルギー（Emergent BDE）解析フレームワークは、以下の論文に基づいています。
+
+- **E3D (Edge-wise Emergent Energy-Decomposition)**:
+  - Shinnosuke Hattori, Kohei Shimamura, Ken-ichi Nomura, Aiichiro Nakano, Rajiv K. Kalia, and Priya Vashishta,  
+    *"Chemical intuition on bond-dissociation energies as an emergent ability of universal machine-learning interatomic potentials"*,  
+    *Nature Communications*, **17**, 8225 (2026).  
+    DOI: [10.1038/s41467-026-74919-8](https://doi.org/10.1038/s41467-026-74919-8)
+
+---
+
+### 2. 実験値データセット・検証リファレンス (Reference BDE)
+モデルが出力する $D_{ij}$ の妥当性確認に使用している実験結合解離エネルギー（BDE）の文献値です（`references/bond_dissociation_energy.pdf`）。
+
+- **Bond Dissociation Energies**:
+  - T. L. Cottrell, *The Strengths of Chemical Bonds*, 2nd ed., Butterworth, London, 1958.
+  - B. deB. Darwent, *National Standard Reference Data Series*, National Bureau of Standards, no. 31, Washington, 1970.
+  - S. W. Benson, *J. Chem. Educ.*, **42**, 502 (1965).
+  - J. A. Kerr, *Chem. Rev.*, **66**, 465 (1966).
+  - J. Speight, *Lange's Handbook of Chemistry*, 17th ed., McGraw-Hill Education, 2016.
+
+---
+
+### 3. 基盤フレームワーク・アーキテクチャ
+- **Allegro / NequIP**:
+  - A. Musaelian et al., *"Learning local equivariant representations for large-scale atomistic dynamics"*, *Nat. Commun.*, **14**, 579 (2023).
+  - S. Batzner et al., *"E(3)-equivariant graph neural networks for data-efficient and accurate interatomic potentials"*, *Nat. Commun.*, **13**, 2453 (2022).
+- **ASE**:
+  - A. H. Larsen et al., *"The Atomic Simulation Environment—a Python library for working with atoms"*, *J. Phys.: Condens. Matter*, **29**, 273002 (2017).
